@@ -1,0 +1,9 @@
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher les informations du push
+        run: |
+          echo "Mon message : Bonjour depuis GitHub Actions !"
+          echo "Branche : ${{ github.ref_name }}"
+          echo "Auteur : ${{ github.actor }}"
