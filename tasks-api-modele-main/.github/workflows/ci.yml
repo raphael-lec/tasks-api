@@ -1,0 +1,22 @@
+name: Continuous Integration
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: 2. Installer Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 3. Installer les dépendances
+        run: pip install -r requirements-dev.txt
+
+      - name: 4. Lancer les tests
+        run: pytest
